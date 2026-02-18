@@ -6,15 +6,12 @@ export const recipecontext = createContext(null);
 const RecipeContext = (props) => {
   const [data, setdata] = useState([]);
   
+  useEffect(()=>{
+    
+    setdata(JSON.parse(localStorage.getItem("recipes")) || [])
+     
 
-  useEffect(() => {
-    axios
-      .get("https://rasoihub-backend.onrender.com/recipes")
-      .then((res) => {
-        setdata(res.data);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+  },[])
 
   
   return (
