@@ -24,7 +24,3 @@ const RecipeContext = (props) => {
 
 export default RecipeContext;
 
-
-
-
-
